@@ -24,3 +24,15 @@ a {
     background: black;
   }
 }
+
+.container { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+  text-align: center;
+  padding: 100px;
+}
+

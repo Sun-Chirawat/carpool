@@ -2,7 +2,7 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
-export default function Home() {
+export default function pointPage() {
   return (
     <div className='content'>
       <h1>Pick Me UP!</h1>
