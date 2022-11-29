@@ -1,15 +1,15 @@
-import CenterNavbar from "./navbarcenter";
-import SimpleNavbar from "./navbar";
-import GridExample from "./card"
+import ButtonAppBars from "./navbarcenter";
+import ButtonAppBar from "./navbar";
+import Post from "./card"
 
 
 export default function Layout({ children }) {
     return (
         <>
-            <SimpleNavbar />
+            <ButtonAppBar />
             {children}
-            <CenterNavbar/>
-            <GridExample/>
+            <ButtonAppBars/>
+            <Post/>
 
         </>
     )

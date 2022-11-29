@@ -1,20 +1,44 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Roboto } from '@next/font/google'
 
-function CenterNavbar() {
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: '#7D2923'
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#11cb5f',
+    },
+  },
+});
+
+export default function ButtonAppBars() {
   return (
-    <Navbar bg="danger" variant="dark">
-    <Container>
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-      <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
-      </Nav>
-    </Container>
-  </Navbar>
+    <main className={roboto.className}>
+    <ThemeProvider theme={theme}>
+      <Box md={{ flexGrow: 1 }}>
+        <AppBar position="static" color="primary" elevation={0} >
+          <Toolbar>
+            <Button color="inherit" align='center' sx={{ flexGrow: 1 }}><h3>ตาราง</h3></Button>
+            <Button color="inherit" align='center' sx={{ flexGrow: 1 }}>โพสต์</Button>
+            <Button color="inherit" align='center' sx={{ flexGrow: 1 }}>แต้ม</Button>
+            <Button color="inherit" align='center' sx={{ flexGrow: 1 }}>ประวัติ</Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </ThemeProvider>
+    </main>
   );
 }
-
-export default CenterNavbar;
