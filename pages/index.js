@@ -12,25 +12,37 @@ import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import NotificationsIcon from '@mui/icons-material/Notifications';
-
+import { useSession } from "next-auth/react";
 
 
 
 export default function Home() {
-  return (
-    <div className='content'>
-      <h1>Pick Me UP!</h1>
-      <Container maxWidth="lg">
-         <TextField id="standard-basic" label="จุดเริ้มต้น" variant="standard" />
-        <TextField id="standard-basic" label="จุดสิ้นสุด" variant="standard" />
-        <TextField id="standard-basic" label="Standard" variant="standard" />
-        <TextField id="standard-basic" label="เวลา" variant="standard" />
-      </Container>
-       
-
-      
-
-
-    </div>
-  );
+  const { data: session } = useSession();
+  
+  if (session){
+    return (
+      <div className='content'>
+        <h1>Pick Me UP!</h1>
+        <Container maxWidth="lg">
+           <TextField id="standard-basic" label="จุดเริ้มต้น" variant="standard" />
+          <TextField id="standard-basic" label="จุดสิ้นสุด" variant="standard" />
+          <TextField id="standard-basic" label="Standard" variant="standard" />
+          <TextField id="standard-basic" label="เวลา" variant="standard" />
+        </Container>
+      </div>
+    );
+  }else{
+    return (
+      <div className='content'>
+        <h1>Me Pick UP!</h1>
+        <Container maxWidth="lg">
+           <TextField id="standard-basic" label="จุดเริ้มต้น" variant="standard" />
+          <TextField id="standard-basic" label="จุดสิ้นสุด" variant="standard" />
+          <TextField id="standard-basic" label="Standard" variant="standard" />
+          <TextField id="standard-basic" label="เวลา" variant="standard" />
+        </Container>
+      </div>
+    );
+  }
+  
 }
