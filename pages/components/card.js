@@ -5,29 +5,46 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material';
+import { CardActionArea } from '@mui/material';
 
-export default function Post() {
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
+
+const cardArr = 
+[{img: 'motorcycle.jpg',title:'Mortorcycle', textContent : 'when they ask if you have any special skill to perform'},
+{img: 'pickup.jpg',title:'Pickup', textContent: 'อยากสบายก็ไปขึ้นรถทัวร์ อยากใจเต้นรัวๆให้ขึ้นคันนี้'},
+{img: 'car.jpg',title:'Car', textContent: 'It is your problem not my problem'},
+{img: 'bus.jpg',title:'Bus', textContent : 'Fast and Furious'},
+{img: 'Van.jpg',title:'Van', textContent : 'Rare pokemon inside'},
+{img: 'car1.jpg',title:'Car', textContent: 'Who needs a moving van?'},]
+
+
+const listCard = cardArr.map( (e) => 
+<Card sx={{ margin : '30px'}}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="200"
+          image={e.img}
+          alt=""
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="div">
+            {e.title}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {e.textContent} 
+          </Typography>
+        </CardContent>
+      </CardActionArea>
     </Card>
-  );
+)
+
+
+export default function card() {
+  return (
+    <>
+    {listCard}
+    </>
+    
+    )
 }

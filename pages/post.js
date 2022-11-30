@@ -1,7 +1,7 @@
 
 
 
-export default function pointPage() {
+export default function post() {
   return (
     <div className='content'>
       <h1>Pick Me UP!</h1>

@@ -20,8 +20,6 @@ export default function Home() {
   return (
     <div className='content'>
       <h1>Pick Me UP!</h1>
-      
-
       <Container maxWidth="lg">
          <TextField id="standard-basic" label="จุดเริ้มต้น" variant="standard" />
         <TextField id="standard-basic" label="จุดสิ้นสุด" variant="standard" />
@@ -29,11 +27,7 @@ export default function Home() {
         <TextField id="standard-basic" label="เวลา" variant="standard" />
       </Container>
        
-        <Container maxWidth="lg" >
-            <IconButton aria-label=" " >
-          <NotificationsIcon/>
-        </IconButton>
-        </Container>
+
       
 
 
